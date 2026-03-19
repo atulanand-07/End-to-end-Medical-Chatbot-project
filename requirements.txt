@@ -13,6 +13,7 @@ langchain-ollama
 pinecone-client
 langchain-pinecone
 
+streamlit
 flask
 pypdf
 python-dotenv
