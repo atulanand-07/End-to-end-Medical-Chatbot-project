@@ -10,7 +10,7 @@ This project uses **Retrieval-Augmented Generation (RAG)** to provide context-aw
 * 💬 Interactive chatbot UI (Streamlit)
 * 📚 Context-aware answers using medical knowledge base
 * 🔍 Semantic search with vector embeddings (Pinecone)
-* 🧠 LLM-powered responses (HuggingFace / Ollama)
+* 🧠 LLM-powered responses (OpenRouter/qwen)
 * ⚡ Fast retrieval with optimized pipeline
 * 🔐 Secure API key management using Streamlit Secrets
 
@@ -22,7 +22,7 @@ This project uses **Retrieval-Augmented Generation (RAG)** to provide context-aw
 * **Backend**: Python, LangChain
 * **Vector Database**: Pinecone
 * **Embeddings**: Sentence Transformers
-* **LLM**: API-based (HuggingFace / Ollama)
+* **LLM**: API-based (OpenRouter/qwen)
 * **Deployment**: Streamlit Community Cloud
 
 ---
