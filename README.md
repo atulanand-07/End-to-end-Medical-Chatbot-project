@@ -1,6 +1,3 @@
-# End-to-end-Medical-Chatbot-project
-
-
 # 🩺 AI Medical Chatbot (RAG GenAI Project)
 
 An end-to-end **Medical Chatbot** built using **Streamlit, LangChain, Pinecone, and LLM APIs**.
@@ -8,14 +5,14 @@ This project uses **Retrieval-Augmented Generation (RAG)** to provide context-aw
 
 ---
 
-# 🚀 Features
+# Features
 
 * 💬 Interactive chatbot UI (Streamlit)
-* 📚 Context-aware answers using medical PDF knowledge
+* 📚 Context-aware answers using medical knowledge base
 * 🔍 Semantic search with vector embeddings (Pinecone)
-* 🧠 LLM-powered responses (Qwen / OpenRouter / API-based)
+* 🧠 LLM-powered responses (HuggingFace / Ollama)
 * ⚡ Fast retrieval with optimized pipeline
-* 🔐 Secure API key management via environment variables
+* 🔐 Secure API key management using Streamlit Secrets
 
 ---
 
@@ -25,8 +22,8 @@ This project uses **Retrieval-Augmented Generation (RAG)** to provide context-aw
 * **Backend**: Python, LangChain
 * **Vector Database**: Pinecone
 * **Embeddings**: Sentence Transformers
-* **LLM**: API-based (OpenRouter / OpenAI / Groq)
-* **Deployment**: Render
+* **LLM**: API-based (HuggingFace / Ollama)
+* **Deployment**: Streamlit Community Cloud
 
 ---
 
@@ -36,12 +33,9 @@ This project uses **Retrieval-Augmented Generation (RAG)** to provide context-aw
 medical-chatbot/
 │
 ├── app.py                # Streamlit frontend
-├── config.py             # Environment config
-├── ingest.py             # Data ingestion (run once locally)
+├── config.py             # Config & environment variables
+├── ingest.py             # Data ingestion (run locally once)
 ├── requirements.txt
-│
-├── data/
-│   └── Medical_book.pdf
 │
 ├── src/
 │   ├── chain.py
@@ -107,9 +101,9 @@ OPENROUTER_API_KEY=your_key
 python ingest.py
 ```
 
-👉 This will:
+This will:
 
-* Process PDF
+* Process documents
 * Generate embeddings
 * Store them in Pinecone
 
@@ -123,45 +117,56 @@ streamlit run app.py
 
 ---
 
-# 🌐 Deployment (Render)
+# ☁️ Deployment (Streamlit Cloud)
 
 ## Steps:
 
-1. Push code to GitHub
-2. Go to Render → New Web Service
-3. Connect repository
+1. Push your code to GitHub
+2. Go to Streamlit Community Cloud
+3. Click **"New App"**
+4. Select your repository
+5. Set:
 
-### Build Command:
+   * Branch → `main`
+   * Main file → `app.py`
+
+---
+
+## 🔐 Add Secrets (IMPORTANT)
+
+In **Advanced Settings → Secrets**, add:
 
 ```
-pip install -r requirements.txt
-```
-
-### Start Command:
-
-```
-streamlit run app.py --server.port=10000 --server.address=0.0.0.0
+PINECONE_API_KEY = "your_key"
+PINECONE_HOST = "your_host"
+INDEX_NAME = "medical-chatbot"
+OPENROUTER_API_KEY = "your_key"
 ```
 
 ---
 
-## 🔐 Add Environment Variables in Render
+## ▶️ Deploy
+
+Click **Deploy** and wait a few minutes.
+
+---
+
+## 🌍 Live App
+
+You will get a public URL like:
 
 ```
-PINECONE_API_KEY = your_key
-PINECONE_HOST = your_host
-INDEX_NAME = medical-chatbot
-OPENROUTER_API_KEY = your_key
+https://your-app.streamlit.app
 ```
 
 ---
 
 # ⚠️ Important Notes
 
+* ❌ Do NOT include `.env` file in GitHub
 * ❌ Do NOT run `ingest.py` during deployment
-* ❌ Do NOT expose API keys in code
 * ✅ Use API-based LLM (not local Ollama)
-* ⚠️ Free tier may have cold start delays
+* ⚠️ First load may take a few seconds
 
 ---
 
@@ -170,7 +175,7 @@ OPENROUTER_API_KEY = your_key
 ```
 User Query → Retriever (Pinecone)
            → Relevant Context
-           → LLM (Qwen / API)
+           → LLM API
            → Response → Streamlit UI
 ```
 
@@ -178,9 +183,9 @@ User Query → Retriever (Pinecone)
 
 # 📌 Disclaimer
 
-This chatbot is for **educational purposes only**
+⚠️ This chatbot is for **educational purposes only**
 It is **not a substitute for professional medical advice**
-**The Project is only for the learning purpose**
+Project is only for the learning purpose
 
 ---
 
@@ -193,10 +198,16 @@ B.Tech | NIT Jamshedpur
 
 # 🌟 Future Improvements
 
-* Chat history (memory)
+* Chat memory with context awareness
 * Source citations
-* Voice input/output
-* Doctor-style UI
+* Voice interaction
 * Authentication system
+* UI enhancements
+
+---
+
+# ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
 
 ---
