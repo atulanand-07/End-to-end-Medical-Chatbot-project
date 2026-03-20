@@ -9,6 +9,7 @@ huggingface_hub
 sentence-transformers
 
 langchain-ollama
+langchain-openai
 
 pinecone-client
 langchain-pinecone

@@ -10,20 +10,20 @@ This project uses **Retrieval-Augmented Generation (RAG)** to provide context-aw
 * 💬 Interactive chatbot UI (Streamlit)
 * 📚 Context-aware answers using medical knowledge base
 * 🔍 Semantic search with vector embeddings (Pinecone)
-* 🧠 LLM-powered responses (OpenRouter/qwen)
+* 🧠 LLM-powered responses (Qwen / OpenRouter / API-based)
 * ⚡ Fast retrieval with optimized pipeline
 * 🔐 Secure API key management using Streamlit Secrets
 
 ---
 
-# Tech Stack
+# 🧠 Tech Stack
 
 * **Frontend**: Streamlit
 * **Backend**: Python, LangChain
 * **Vector Database**: Pinecone
 * **Embeddings**: Sentence Transformers
-* **LLM**: API-based (OpenRouter/qwen)
-* **Deployment**: Streamlit Community Cloud
+* **LLM**: API-based (OpenRouter / OpenAI / Groq)
+* **Deployment**: Render
 
 ---
 
@@ -58,8 +58,7 @@ medical-chatbot/
 ## 1. Clone the Repository
 
 ```
-git clone https://github.com/yourusername/medical-chatbot.git
-cd medical-chatbot
+git clone https://github.com/atulanand-07/End-to-end-Medical-Chatbot-project
 ```
 
 ---
@@ -185,7 +184,7 @@ User Query → Retriever (Pinecone)
 
 ⚠️ This chatbot is for **educational purposes only**
 It is **not a substitute for professional medical advice**
-Project is only for the learning purpose
+**The Project is only for the learning purpose**
 
 ---
 
